@@ -24,7 +24,7 @@ fi
 echo "#########################################"
 echo
 
-POMARIA_DIR=/usr/local/share/lua/5.1/pomaria-side/
+POMARIA_DIR=/usr/local/share/lua/5.1/pomaria-side
 
 if [ ! -d "$POMARIA_DIR" ]; then
 	echo "Making directory $POMARIA_DIR"
@@ -37,7 +37,7 @@ echo "#########################################"
 echo
 
 if [ ! -f "$POMARIA_DIR/abstract.lua" ]; then
-	sudo ln ./abstract.lua $POMARIA_DIR/abstract.lua 
+	sudo ln -s ./abstract.lua $POMARIA_DIR/abstract.lua 
 	echo "linked abstract.lua"
 else
 	echo "abstract.lua already linked in directory"
@@ -46,7 +46,7 @@ echo
 echo "#########################################"
 echo
 if [ ! -f "$POMARIA_DIR/settings.lua" ]; then
-	sudo ln ./settings.lua $POMARIA_DIR/settings.lua 
+	sudo ln -s ./settings.lua $POMARIA_DIR/settings.lua 
 	echo "linked settings.lua"
 else
 	echo "settings.lua already linked in directory"
