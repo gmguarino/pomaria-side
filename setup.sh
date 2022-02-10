@@ -37,19 +37,19 @@ echo "#########################################"
 echo
 
 if [ ! -f "$POMARIA_DIR/abstract.lua" ]; then
-	sudo cp ./abstract.lua $POMARIA_DIR/abstract.lua 
-	echo "copied abstract.lua"
+	sudo ln ./abstract.lua $POMARIA_DIR/abstract.lua 
+	echo "linked abstract.lua"
 else
-	echo "abstract.lua already in directory"
+	echo "abstract.lua already linked in directory"
 fi
 echo
 echo "#########################################"
 echo
 if [ ! -f "$POMARIA_DIR/settings.lua" ]; then
-	sudo cp ./settings.lua $POMARIA_DIR/settings.lua 
-	echo "copied settings.lua"
+	sudo ln ./settings.lua $POMARIA_DIR/settings.lua 
+	echo "linked settings.lua"
 else
-	echo "settings.lua already in directory"
+	echo "settings.lua already linked in directory"
 fi
 echo "#########################################"
 echo

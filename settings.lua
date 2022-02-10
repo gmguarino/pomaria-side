@@ -55,6 +55,7 @@ which is called every `public_ip_refresh_rate` secondes
 use_public_ip = false
 public_ip_refresh_rate = 60     -- secondes
 public_ip = nil
+print(use_public_ip)
 
 ----------------------------------------------
 
