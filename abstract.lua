@@ -9,7 +9,7 @@
 
 require "cairo"
 require "imlib2"
-require "settings"
+require "pomaria-side/settings"
 
 
 function image(x, y, file)
@@ -343,7 +343,8 @@ discharging_battery = function() return false end  -- check if the battery is di
 local function init_battery()
     local bat_indexes = {}
     local size = 0          -- how many batteries found
-    if parse("battery_percent BAT0") ~= nil then 
+    if parse("battery_percent BAT0") ~= nil then
+	print("Parsing ",parse("battery_percent BAT0"))
         table.insert(bat_indexes, 0) 
         size = size + 1
     end
@@ -362,10 +363,11 @@ local function init_battery()
     elseif size >= 1 then
         has_battery = true
         battery1_index = bat_indexes[1]
-        battery1_percent = function () return parse("battery_percent BAT" .. bat_indexes[1]) end
+        battery1_percent = function () return parse("battery_percent BAT" .. battery1_index) end
 
         if size == 1 then
             battery_percent = function() return tonumber(battery1_percent()) end
+	    print(battery_percent())
             discharging_battery = function() return string.match(parse("battery BAT" .. battery1_index), "discharging") end
         end
 

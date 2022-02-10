@@ -32,13 +32,13 @@ EDIT THIS to match your network interface.
 You can find out by executing `ifconfig` or `ip link`.
 It might be "wlan0", "eth0", "wlp3s0" or something else
 ]]
-net_interface = "wlan0"
+net_interface = "wlp2s0"
 
 --[[
 this depends on your own internet speed
 ]]
-download_rate_maximum = 1000     -- kb
-upload_rate_maximum   = 1000     -- kb
+download_rate_maximum = 500000     -- kb
+upload_rate_maximum   = 500000     -- kb
 
 --[[
 Default font used by the convinient functions like write() and write_bold()

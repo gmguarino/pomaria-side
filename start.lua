@@ -5,8 +5,10 @@
 -- License:     GPL-3.0
 -- repository:  https://www.github.com/SZinedine/pomaria-side
 ----------------------------------
+--local folderOfThisFile = (...):match("(.-)[^%.]+$")
+--
 
-require 'abstract'
+require('pomaria-side/abstract')
 
 settings = {
     line = {},
