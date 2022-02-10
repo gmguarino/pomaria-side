@@ -143,7 +143,7 @@ function draw_net()
 
     local netinfo = {}
     table.insert(netinfo, "SSID:        " .. ssid())
-    table.insert(netinfo, "Wifi Signal: " .. wifi_signal() .. "%")
+    -- table.insert(netinfo, "Wifi Signal: " .. wifi_signal() .. "%")
     if use_public_ip then
         table.insert(netinfo, "Public IP:   " .. public_ip)
     end
