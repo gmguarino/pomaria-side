@@ -28,7 +28,7 @@ POMARIA_DIR=/usr/local/share/lua/5.1/pomaria-side
 
 if [ ! -d "$POMARIA_DIR" ]; then
 	echo "Making directory $POMARIA_DIR"
-	sudo mkdir -p $(POMARIA_DIR)
+	sudo mkdir -p $POMARIA_DIR
 else
 	echo "$POMARIA_DIR already exists"
 fi
@@ -36,21 +36,16 @@ echo
 echo "#########################################"
 echo
 
-if [ ! -f "$POMARIA_DIR/abstract.lua" ]; then
-	sudo ln -s ./abstract.lua $POMARIA_DIR/abstract.lua 
-	echo "linked abstract.lua"
-else
-	echo "abstract.lua already linked in directory"
-fi
+sudo cp ./abstract.lua $POMARIA_DIR/abstract.lua 
+echo "copied abstract.lua"
 echo
+
 echo "#########################################"
 echo
-if [ ! -f "$POMARIA_DIR/settings.lua" ]; then
-	sudo ln -s ./settings.lua $POMARIA_DIR/settings.lua 
-	echo "linked settings.lua"
-else
-	echo "settings.lua already linked in directory"
-fi
+
+sudo cp ./settings.lua $POMARIA_DIR/settings.lua 
+echo "copied settings.lua"
+
 echo "#########################################"
 echo
 echo "Setup autostart"
@@ -58,15 +53,15 @@ echo
 
 if [ ! -f "$HOME/.config/autostart/Conky.desktop" ]; then
 	echo "Creating desktop entry"
-	"""[Desktop Entry]
-	Type=Application
-	Exec=conky -p 15 -q -c $HOME/.conky/pomaria-side/conkyrc
-	X-GNOME-Autostart-enabled=true
-	NoDisplay=false
-	Hidden=false
-	Name[it]=Conky
-	Comment[it]=Nessuna descrizione
-	X-GNOME-Autostart-Delay=0""" >> .config/autostart/Conky.desktop 
+	# """[Desktop Entry]
+	# Type=Application
+	# Exec=conky -p 15 -q -c $HOME/.conky/pomaria-side/conkyrc
+	# X-GNOME-Autostart-enabled=true
+	# NoDisplay=false
+	# Hidden=false
+	# Name[it]=Conky
+	# Comment[it]=Nessuna descrizione
+	# X-GNOME-Autostart-Delay=0""" >> .config/autostart/Conky.desktop 
 
 else
 	echo "Autostart entry found:"
