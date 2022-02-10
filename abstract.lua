@@ -344,7 +344,6 @@ local function init_battery()
     local bat_indexes = {}
     local size = 0          -- how many batteries found
     if parse("battery_percent BAT0") ~= nil then
-	print("Parsing ",parse("battery_percent BAT0"))
         table.insert(bat_indexes, 0) 
         size = size + 1
     end
