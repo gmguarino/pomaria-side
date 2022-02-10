@@ -367,7 +367,6 @@ local function init_battery()
 
         if size == 1 then
             battery_percent = function() return tonumber(battery1_percent()) end
-	    print(battery_percent())
             discharging_battery = function() return string.match(parse("battery BAT" .. battery1_index), "discharging") end
         end
 
