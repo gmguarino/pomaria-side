@@ -1,7 +1,8 @@
 # Pomaria-Side Conky
 
 Pomaria-side is a conky theme that displays system resources usage in fine lines, on the side of the screen.
-
+This fork is the setup I use for my personal Linux Mint 20.2 Uma laptop so that I can reproduce the setup elsewhere quickly.
+Clone to the `~/.conky/` folder and run setup.sh with `sudo`. 
 
 ## Screenshots
 
