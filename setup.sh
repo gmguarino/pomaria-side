@@ -50,18 +50,19 @@ echo "#########################################"
 echo
 echo "Setup autostart"
 echo
+echo 
 
 if [ ! -f "$HOME/.config/autostart/Conky.desktop" ]; then
 	echo "Creating desktop entry"
-	# """[Desktop Entry]
-	# Type=Application
-	# Exec=conky -p 15 -q -c $HOME/.conky/pomaria-side/conkyrc
-	# X-GNOME-Autostart-enabled=true
-	# NoDisplay=false
-	# Hidden=false
-	# Name[it]=Conky
-	# Comment[it]=Nessuna descrizione
-	# X-GNOME-Autostart-Delay=0""" >> .config/autostart/Conky.desktop 
+	"""[Desktop Entry]
+	Type=Application
+	Exec=conky -p 15 -q -c $HOME/.conky/pomaria-side/conkyrc
+	X-GNOME-Autostart-enabled=true
+	NoDisplay=false
+	Hidden=false
+	Name[it]=Conky
+	Comment[it]=Nessuna descrizione
+	X-GNOME-Autostart-Delay=0""" > $HOME/.config/autostart/Conky.desktop 
 
 else
 	echo "Autostart entry found:"
